@@ -1,0 +1,37 @@
+{% extends "index.html" %}
+
+{% block title %}Просмотр/Удаление{% endblock %}
+
+{% block content %}
+  <h1 class="text-center">Просмотр/удаление комментариев</h1>
+  {% if comments %}
+    <table>
+      <tr>
+        <th>Фамилия</th>
+        <th>Имя</th>
+        <th>Отчество</th>
+        <th>Регион</th>
+        <th>Город</th>
+        <th>Контактный телефон</th>
+        <th>E-mail</th>
+        <th>Комментарий</th>
+        <th></th>
+      </tr>
+      {% for comment in comments %}
+        <tr>
+          <td>{{comment.fname}}</td>
+          <td>{{comment.name}}</td>
+          <td>{{comment.lname}}</td>
+          <td>{{comment.region.region_name}}</td>
+          <td>{{comment.city.city_name}}</td>
+          <td>{{comment.phone}}</td>
+          <td>{{comment.email}}</td>
+          <td>{{comment.comment}}</td>
+          <td><button id="{{comment.id}}" class="denger" type="submit">Удалить</></td>
+        </tr>
+      {% endfor %}
+    </table>
+    {% else %}
+      <h3 class="text-center">Данные отсутствуют</h3>
+    {% endif %}
+{% endblock %}

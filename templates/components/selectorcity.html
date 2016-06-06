@@ -1,0 +1,6 @@
+<select id="city" name="city">
+  <option value="0">Виберите город</option>
+  {% for city in cities %}
+    <option value="{{city.id}}">{{city.city_name}}</option>
+  {% endfor %}
+</select>

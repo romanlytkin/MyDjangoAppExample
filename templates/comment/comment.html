@@ -1,0 +1,34 @@
+{% extends "index.html" %}
+
+{% block title %}Комментарий{% endblock %}
+
+{% block content %}
+  <h1 class="text-center">Оставьте свой комментарий</h1>
+  <div>
+    <label for="fname">Фамилия</label>
+    <input type="text" id="fname" name="firstname" required=""/>
+
+    <label for="lname">Имя</label>
+    <input type="text" id="lname" name="lastname" required=""/>
+
+    <label for="sname">Отчество</label>
+    <input type="text" id="sname" name="secondname"/>
+
+    <label for="region">Регион</label>
+    {% include "selectorregion.html" %}
+
+    <label for="city">Город</label>
+    {% include "selectorcity.html" %}
+
+    <label for="phone">Контактный телефон</label>
+    <input type="text" id="phone" name="phone"/>
+
+    <label for="email">E-mail</label>
+    <input type="email" id="email" name="email"/>
+
+    <label for="comment">Комментарий</label>
+    <input type="text" id="comment" name="comment" required=""/>
+
+    <button class="add">Добавить</>
+  </div>
+{% endblock %}
